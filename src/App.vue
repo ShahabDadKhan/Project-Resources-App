@@ -1,12 +1,14 @@
 <template>
-  <ul></ul>
+  <stored-resource :resources="storedResource"></stored-resource>
 </template>
 
 <script>
+import StoredResource from './components/learning-resource/StoredResource.vue';
 export default {
+  components: { StoredResource },
   data() {
     return {
-      storedResources: [
+      storedResource: [
         {
           id: 'official-guid',
           title: 'Official Guid',
@@ -24,3 +26,19 @@ export default {
   }
 };
 </script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+</style>
