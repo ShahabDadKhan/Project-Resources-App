@@ -4,11 +4,13 @@
       @click="setSelectedTab('stored-resources')"
       :mode="storedResButtonMode"
     >
+      Stored Resources
     </base-button>
     <base-button
-      @click="setSelectedTab('add-resources')"
-      :mode="storedResButtonMode"
+      @click="setSelectedTab('add-resource')"
+      :mode="addResButtonMode"
     >
+      Add Resources
     </base-button>
   </base-card>
   <component :is="selectedTab"></component>
@@ -48,7 +50,7 @@ export default {
       return this.selectedTab === 'stored-resources' ? null : 'flat';
     },
     addResButtonMode() {
-      return this.selectedTab === 'add-resources' ? null : 'flat';
+      return this.selectedTab === 'add-resource' ? null : 'flat';
     }
   },
   provide() {
